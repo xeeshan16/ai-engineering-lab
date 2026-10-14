@@ -12,12 +12,13 @@ ADRs, and its own CI pipeline.
 
 | # | Project | What it does | Status | Stack |
 |---|---------|--------------|--------|-------|
-| 01 | [Agent Replay](projects/01-agent-replay) | Record, replay and regression-gate AI agent trajectories: deterministic tool replay, first-divergence diffing, layered scoring and a CI gate | 🚧 Active | Python 3.12, pydantic, OpenTelemetry, PostgreSQL, FastAPI |
+| 01 | [Agent Replay](https://github.com/xeeshan16/agent-replay) | Record, replay and regression-gate AI agent trajectories: deterministic tool replay, first-divergence diffing, layered scoring and a CI gate | 🚧 Active | Python 3.12, pydantic, OpenTelemetry, PostgreSQL, FastAPI |
 
 ## Conventions
 
 - `projects/<NN>-<slug>/` is a self-contained project with its own `pyproject.toml`, tests,
-  evals, docs, Dockerfile and README.
+  evals, docs, Dockerfile and README. Projects that grow into their own repository are linked
+  from the table above instead.
 - `.github/workflows/<NN>-<slug>.yml` runs lint, type-check, tests and the eval smoke test for
   that project only (path-filtered).
 - [`registry.json`](registry.json) records each project's status and dates.
