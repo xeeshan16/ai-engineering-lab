@@ -10,6 +10,7 @@ on:
     paths:
       - "projects/01-agent-replay/**"
       - ".github/workflows/01-agent-replay.yml"
+  workflow_dispatch:
 
 permissions:
   contents: read
