@@ -1,0 +1,11 @@
+[
+  {
+    "id": "01",
+    "slug": "agent-replay",
+    "title": "Agent Replay: record, replay and regression-gate AI agent trajectories",
+    "status": "active",
+    "start_date": "2026-10-14",
+    "end_date": null,
+    "summary": "Python service and CLI that records agent runs (OpenTelemetry GenAI spans), stores them in PostgreSQL, replays them deterministically against recorded tool responses, diffs trajectories to the first divergence, scores them in layers (deterministic checks, invariants, optional LLM judge) and gates CI on success-rate, step/cost regressions and unsafe actions."
+  }
+]
