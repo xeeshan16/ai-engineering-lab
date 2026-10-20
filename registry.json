@@ -8,5 +8,16 @@
     "end_date": "2026-10-20",
     "summary": "Python service and CLI that records agent runs (OpenTelemetry GenAI spans), stores them in PostgreSQL with content-addressed blobs, replays new agent versions against recorded tools behind a fail-closed side-effect sandbox, diffs trajectories to the first divergence, scores them in layers (checks, an invariants DSL, an optional LLM judge) and gates CI with bootstrap and Wilson intervals. Measured with fake providers: layered verdict precision 0.89 / recall 0.94 on 64 seeded-regression cases, first divergence localised in 23/23 changed cases, 70/70 cross-process replays identical.",
     "repo": "xeeshan16/agent-replay"
+  },
+  {
+    "id": "02",
+    "slug": "kafka-llm-enricher",
+    "title": "Kafka LLM Enricher: exactly-once, budgeted LLM enrichment for Kafka streams on Spring Boot",
+    "status": "proposed",
+    "start_date": null,
+    "end_date": null,
+    "summary": "Spring Boot service and starter that consumes Kafka topics, enriches each record with a schema-validated LLM call and writes the result transactionally to an output topic. A PostgreSQL result ledger keyed by pipeline, prompt version, model and canonical input means rebalances, retries and replays never pay for the same call twice. It adds per-key ordered concurrency, provider rate limits with adaptive concurrency on 429s, per-tenant token budgets, skip predicates, PII masking, retry and dead-letter topics, and Micrometer/OpenTelemetry cost and latency metrics.",
+    "language": "Java 21 / Spring Boot 3",
+    "repo": "xeeshan16/kafka-llm-enricher"
   }
 ]
