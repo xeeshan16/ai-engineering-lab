@@ -13,7 +13,7 @@ ADRs, and its own CI pipeline.
 | # | Project | What it does | Status | Stack |
 |---|---------|--------------|--------|-------|
 | 01 | [Agent Replay](https://github.com/xeeshan16/agent-replay) | Record, replay and regression-gate AI agent trajectories: deterministic tool replay, first-divergence diffing, layered scoring and a CI gate | ✅ Completed | Python 3.12, pydantic, OpenTelemetry, PostgreSQL, FastAPI |
-| 02 | [Kafka LLM Enricher](https://github.com/xeeshan16/kafka-llm-enricher) | Exactly-once, budgeted LLM enrichment of Kafka streams: a Postgres result ledger so replays never re-pay, schema-validated output, per-key ordering, rate limits, token budgets and dead-letter topics | 📝 Proposed | Java 21, Spring Boot 3, Spring Kafka, PostgreSQL, Micrometer, OpenTelemetry |
+| 02 | [Kafka LLM Enricher](https://github.com/xeeshan16/kafka-llm-enricher) | Exactly-once, budgeted LLM enrichment of Kafka streams: a Postgres result ledger so replays never re-pay, schema-validated output, per-key ordering, rate limits, token budgets and dead-letter topics | 🚧 Active (day 1/7) | Java 21, Spring Boot 3, Spring Kafka, PostgreSQL, Micrometer, OpenTelemetry |
 
 ## Conventions
 
