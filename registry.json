@@ -19,5 +19,16 @@
     "summary": "Spring Boot service and starter that consumes Kafka topics, enriches each record with a schema-validated LLM call and writes the result transactionally to an output topic. A PostgreSQL result ledger keyed by pipeline, prompt version, model and canonical input means rebalances, retries and replays never pay for the same call twice; it adds per-key ordered concurrency, provider rate limits with adaptive concurrency on 429s, per-tenant cost caps, skip rules, PII masking, retry and dead-letter topics, and Micrometer/OpenTelemetry cost and latency metrics. Measured in CI on 240 labelled synthetic disputes (fake provider) and 80 with qwen2.5:0.5b on Ollama: 0 prompts containing a card number, email or phone, 0 duplicate paid calls or deliveries, replays answered 100% from the ledger with 0 provider calls (360 records/s vs 46.5 on pass 1 with the fake); the exactly-once chaos test made exactly 40 provider calls and 40 committed envelopes for 40 inputs.",
     "language": "Java 21 / Spring Boot 3",
     "repo": "xeeshan16/kafka-llm-enricher"
+  },
+  {
+    "id": "03",
+    "slug": "kafka-dlq-doctor",
+    "title": "Kafka DLQ Doctor: cluster, diagnose, repair and safely redrive Kafka dead letters",
+    "status": "proposed",
+    "start_date": null,
+    "end_date": null,
+    "summary": "Go service and CLI that reads Kafka dead-letter topics (Spring Kafka DLT, Kafka Connect and Kafka Streams KIP-1034 headers), groups dead letters into incidents by deterministic failure fingerprints plus embedding similarity, has an LLM diagnose each incident from masked evidence with checked citations, proposes repairs as a constrained transform DSL validated by dry-run against the schema, and redrives approved plans idempotently with rate limits, a PostgreSQL redrive ledger and a re-poison circuit breaker.",
+    "language": "Go",
+    "repo": "xeeshan16/kafka-dlq-doctor"
   }
 ]
