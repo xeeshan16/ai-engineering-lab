@@ -13,10 +13,10 @@
     "id": "02",
     "slug": "kafka-llm-enricher",
     "title": "Kafka LLM Enricher: exactly-once, budgeted LLM enrichment for Kafka streams on Spring Boot",
-    "status": "active",
+    "status": "completed",
     "start_date": "2026-10-21",
-    "end_date": null,
-    "summary": "Spring Boot service and starter that consumes Kafka topics, enriches each record with a schema-validated LLM call and writes the result transactionally to an output topic. A PostgreSQL result ledger keyed by pipeline, prompt version, model and canonical input means rebalances, retries and replays never pay for the same call twice. It adds per-key ordered concurrency, provider rate limits with adaptive concurrency on 429s, per-tenant token budgets, skip predicates, PII masking, retry and dead-letter topics, and Micrometer/OpenTelemetry cost and latency metrics.",
+    "end_date": "2026-10-28",
+    "summary": "Spring Boot service and starter that consumes Kafka topics, enriches each record with a schema-validated LLM call and writes the result transactionally to an output topic. A PostgreSQL result ledger keyed by pipeline, prompt version, model and canonical input means rebalances, retries and replays never pay for the same call twice; it adds per-key ordered concurrency, provider rate limits with adaptive concurrency on 429s, per-tenant cost caps, skip rules, PII masking, retry and dead-letter topics, and Micrometer/OpenTelemetry cost and latency metrics. Measured in CI on 240 labelled synthetic disputes (fake provider) and 80 with qwen2.5:0.5b on Ollama: 0 prompts containing a card number, email or phone, 0 duplicate paid calls or deliveries, replays answered 100% from the ledger with 0 provider calls (360 records/s vs 46.5 on pass 1 with the fake); the exactly-once chaos test made exactly 40 provider calls and 40 committed envelopes for 40 inputs.",
     "language": "Java 21 / Spring Boot 3",
     "repo": "xeeshan16/kafka-llm-enricher"
   }
