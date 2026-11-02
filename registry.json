@@ -24,10 +24,10 @@
     "id": "03",
     "slug": "kafka-dlq-doctor",
     "title": "Kafka DLQ Doctor: cluster, diagnose, repair and safely redrive Kafka dead letters",
-    "status": "proposed",
+    "status": "dropped",
     "start_date": null,
-    "end_date": null,
-    "summary": "Go service and CLI that reads Kafka dead-letter topics (Spring Kafka DLT, Kafka Connect and Kafka Streams KIP-1034 headers), groups dead letters into incidents by deterministic failure fingerprints plus embedding similarity, has an LLM diagnose each incident from masked evidence with checked citations, proposes repairs as a constrained transform DSL validated by dry-run against the schema, and redrives approved plans idempotently with rate limits, a PostgreSQL redrive ledger and a re-poison circuit breaker.",
+    "end_date": "2026-11-02",
+    "summary": "Dropped: builder re-scoped to AI-first developer tools",
     "language": "Go",
     "repo": "xeeshan16/kafka-dlq-doctor"
   }
