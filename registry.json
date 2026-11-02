@@ -30,5 +30,16 @@
     "summary": "Dropped: builder re-scoped to AI-first developer tools",
     "language": "Go",
     "repo": "xeeshan16/kafka-dlq-doctor"
+  },
+  {
+    "id": "04",
+    "slug": "ci-pinpoint",
+    "title": "CI Pinpoint: find the exact log lines that broke a CI build, explain why, and brief your coding agent",
+    "status": "proposed",
+    "start_date": null,
+    "end_date": null,
+    "summary": "Python CLI, MCP server and GitHub Action that takes a failed CI run (GitHub Actions URL, GitLab job or any raw log), normalises and segments the log, ranks candidate failure blocks with log-template mining plus embeddings, has an LLM rerank and diagnose them into a schema-validated brief whose line citations are verified against the log, and hands coding agents a few-KB brief instead of a multi-MB log. Measured against tail-N, grep and heuristic-only baselines on LogChunks (797 real labelled CI logs, CC-BY-4.0) for failure-chunk recall and token reduction, with local models via Ollama.",
+    "language": "Python 3.12",
+    "repo": "xeeshan16/ci-pinpoint"
   }
 ]
