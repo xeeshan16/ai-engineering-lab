@@ -41,5 +41,16 @@
     "summary": "Python CLI, MCP server and GitHub Action that takes a failed CI run (GitHub Actions or GitLab URL, or any log file) and returns the lines that broke it plus a schema-validated diagnosis whose citations are verified against the log. Normalises and redacts the log, mines Drain-style templates, scores and budgets blocks (optional embedding or LLM re-ranking), fences the excerpt as untrusted input and checks the answer for injection. Measured in CI on the LogChunks held-out split (584 real labelled Travis CI logs, CC BY 4.0) at a 2,000-token budget: the labelled failure is shown in 91.6% of logs vs 69.7% for tail and 56.5% for grep, line recall 78.3% vs 64.5% (+13.8 points, 95% CI +10.4 to +17.2); with qwen2.5:3b on Ollama, 35 of 40 sampled logs got a verified diagnosis and 20 of 40 cited a labelled line. Released as 0.1.0 (tag v0.1.0 at 848847d).",
     "language": "Python 3.11+",
     "repo": "xeeshan16/ci-pinpoint"
+  },
+  {
+    "id": "05",
+    "slug": "upgrade-impact",
+    "title": "Upgrade Impact: tell whether a dependency bump PR touches your code, where, and why",
+    "status": "proposed",
+    "start_date": null,
+    "end_date": null,
+    "summary": "Python CLI, GitHub Action and MCP server for Dependabot and Renovate PRs (PyPI and npm): reads the release notes between the two versions, extracts breaking changes as structured claims, finds the matching usages in the repository (tree-sitter index plus embeddings) and has the model adjudicate each one, returning the affected lines or a confident 'no impact' with every claim cited to a release-note line and a code line, both verified. Measured on real bump PRs mined from public history against import-grep, symbol-grep and naive-prompt baselines.",
+    "language": "Python 3.11+",
+    "repo": "xeeshan16/upgrade-impact"
   }
 ]
