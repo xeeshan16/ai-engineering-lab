@@ -46,10 +46,10 @@
     "id": "05",
     "slug": "upgrade-impact",
     "title": "Upgrade Impact: tell whether a dependency bump PR touches your code, where, and why",
-    "status": "active",
+    "status": "completed",
     "start_date": "2026-11-21",
-    "end_date": null,
-    "summary": "Python CLI, GitHub Action and MCP server for Dependabot and Renovate PRs (PyPI and npm): reads the release notes between the two versions, extracts breaking changes as structured claims, finds the matching usages in the repository (tree-sitter index plus embeddings) and has the model adjudicate each one, returning the affected lines or a confident 'no impact' with every claim cited to a release-note line and a code line, both verified. Measured on real bump PRs mined from public history against import-grep, symbol-grep and naive-prompt baselines.",
+    "end_date": "2026-11-27",
+    "summary": "Python CLI, GitHub Action and MCP server for Dependabot and Renovate PRs (PyPI and npm): reads the release notes between the two versions, extracts breaking changes as claims cited to verified note lines, indexes usages (Python ast, JS/TS tree-sitter), matches them parameter-aware and has the model review uncertain lines with two-sided verified citations; 'no impact' must be earned (unclaimed breaking lines, runtime floors, a second reading). Redacts secrets, fences notes as untrusted, OpenTelemetry, cost accounting, Docker. Scored once on a held-out split of real bump PRs: on a 20-case sample with qwen2.5:7b on Ollama it flagged 0 of 10 clean bumps (import-grep 10, symbol-grep 4, naive prompt 5) but detected only 2 of 10 impact cases strictly (4 with possible lines) and called 5 impact cases 'no impact'; on all 139 test cases import-grep detects 86.8% with 100% false alarms, symbol-grep 44.7% with 25.7%. Released as 0.1.0 (tag v0.1.0 to be pushed at 7d4892f).",
     "language": "Python 3.11+",
     "repo": "xeeshan16/upgrade-impact"
   }
