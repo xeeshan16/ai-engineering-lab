@@ -52,5 +52,16 @@
     "summary": "Python CLI, GitHub Action and MCP server for Dependabot and Renovate PRs (PyPI and npm): reads the release notes between the two versions, extracts breaking changes as claims cited to verified note lines, indexes usages (Python ast, JS/TS tree-sitter), matches them parameter-aware and has the model review uncertain lines with two-sided verified citations; 'no impact' must be earned (unclaimed breaking lines, runtime floors, a second reading). Redacts secrets, fences notes as untrusted, OpenTelemetry, cost accounting, Docker. Scored once on a held-out split of real bump PRs: on a 20-case sample with qwen2.5:7b on Ollama it flagged 0 of 10 clean bumps (import-grep 10, symbol-grep 4, naive prompt 5) but detected only 2 of 10 impact cases strictly (4 with possible lines) and called 5 impact cases 'no impact'; on all 139 test cases import-grep detects 86.8% with 100% false alarms, symbol-grep 44.7% with 25.7%. Released as 0.1.0 (tag v0.1.0 to be pushed at 7d4892f).",
     "language": "Python 3.11+",
     "repo": "xeeshan16/upgrade-impact"
+  },
+  {
+    "id": "06",
+    "slug": "test-teeth",
+    "title": "Test Teeth: would this PR's tests fail if the change were wrong?",
+    "status": "proposed",
+    "start_date": null,
+    "end_date": null,
+    "summary": "Python CLI, GitHub Action and MCP server that audits the tests in a pull request: a model writes realistic, intent-aware bugs into only the lines the PR changed, the PR's own tests run against each one in an isolated copy, and every bug that survives is reported with an explanation and a suggested test that is kept only if it passes on the PR and fails on the bug. Planned eval: real bug-fix PRs (SWE-bench, MIT; BugsInPy commit ids) with the developer's fail-to-pass test removed, scored on whether the verified suggestions catch the real bug, against diff coverage, operator mutation and a naive prompt.",
+    "language": "Python 3.11+",
+    "repo": "xeeshan16/test-teeth"
   }
 ]
